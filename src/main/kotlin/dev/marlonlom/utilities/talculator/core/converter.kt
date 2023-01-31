@@ -10,7 +10,13 @@ data class TemperatureConvertResponse(
   val fahrenheitValue: Double,
   val kelvinValue: Double,
   val rankineValue: Double
-)
+) {
+
+  fun isBoilingPointOfWater(): Boolean = celsiusValue.equals(100.0)
+    .and(fahrenheitValue.equals(212.00))
+    .and(kelvinValue.equals(373.15))
+    .and(rankineValue.equals(671.67))
+}
 
 class TemperatureConverter {
   fun calculate(request: TemperatureConvertRequest): TemperatureConvertResponse =

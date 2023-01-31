@@ -2,6 +2,7 @@ package dev.marlonlom.utilities.talculator.core
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 internal class TemperatureConverterTest {
   private val converter = TemperatureConverter()
@@ -44,5 +45,16 @@ internal class TemperatureConverterTest {
     assertEquals(-159.67, response.fahrenheitValue)
     assertEquals(166.67, response.kelvinValue)
     assertEquals(request.valueToConvert, response.rankineValue)
+  }
+
+  @Test
+  fun shouldCalculateBoilingPointOfWater() {
+    val request = TemperatureConvertRequest(100.0, TemperatureUnit.CELSIUS)
+    val response = converter.calculate(request)
+    assertEquals(request.valueToConvert, response.celsiusValue)
+    assertEquals(212.0, response.fahrenheitValue)
+    assertEquals(373.15, response.kelvinValue)
+    assertEquals(671.67, response.rankineValue)
+    assertTrue(response.isBoilingPointOfWater())
   }
 }

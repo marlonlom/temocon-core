@@ -11,7 +11,7 @@ class CelsiusTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.CELSIUS
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(
     celsiusValue = valueToConvert.roundToTwoDecimals(),
-    fahrenheitValue = (((9 / 5) * valueToConvert) + 32.0).roundToTwoDecimals(),
+    fahrenheitValue = ((valueToConvert * 1.8) + 32.0).roundToTwoDecimals(),
     kelvinValue = (valueToConvert + 273.15).roundToTwoDecimals(),
     rankineValue = ((1.8 * (valueToConvert + 273.15))).roundToTwoDecimals()
   )
