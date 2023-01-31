@@ -16,6 +16,11 @@ data class TemperatureConvertResponse(
     .and(fahrenheitValue.equals(212.00))
     .and(kelvinValue.equals(373.15))
     .and(rankineValue.equals(671.67))
+
+  fun isAbsoluteZero(): Boolean = celsiusValue.equals(-273.15)
+    .and(fahrenheitValue.equals(-459.67))
+    .and(kelvinValue.equals(0.0))
+    .and(rankineValue.equals(0.0))
 }
 
 class TemperatureConverter {

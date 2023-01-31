@@ -57,4 +57,15 @@ internal class TemperatureConverterTest {
     assertEquals(671.67, response.rankineValue)
     assertTrue(response.isBoilingPointOfWater())
   }
+
+  @Test
+  fun shouldCalculateAbsoluteZero() {
+    val request = TemperatureConvertRequest(-459.67, TemperatureUnit.FAHRENHEIT)
+    val response = converter.calculate(request)
+    assertEquals(-273.15, response.celsiusValue)
+    assertEquals(request.valueToConvert, response.fahrenheitValue)
+    assertEquals(0.0, response.kelvinValue)
+    assertEquals(0.0, response.rankineValue)
+    assertTrue(response.isAbsoluteZero())
+  }
 }
