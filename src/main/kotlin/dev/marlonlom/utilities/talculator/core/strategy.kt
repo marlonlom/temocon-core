@@ -1,12 +1,46 @@
 package dev.marlonlom.utilities.talculator.core
 
+/**
+ * Performs double value rounding to two decimals.
+ * @author marlonlom
+ * @since 1.0.0
+ *
+ * @return A Double value formatted with two decimals.
+ */
 private fun Double.roundToTwoDecimals() = "%.2f".format(this).toDouble()
 
+/**
+ * Definition interface for temperature unit conversion feature.
+ * @author marlonlom
+ * @since 1.0.0
+ *
+ * @property from Temperature unit for be used in conversion calculations.
+ */
 interface TemperatureConversion {
+  /**
+   * Temperature unit for be used in conversion calculations.
+   * @author marlonlom
+   * @since 1.0.0
+   */
   val from: TemperatureUnit
+
+  /**
+   * Performs temperature conversion calculations using selected unit.
+   * @author marlonlom
+   * @since 1.0.0
+   *
+   * @param valueToConvert Numeric temperature value to be used
+   * @return A temperature conversion response.
+   */
   fun calculate(valueToConvert: Double): TemperatureConvertResponse
 }
 
+/**
+ * Interface implementation for Celsius temperature unit conversion feature.
+ * @author marlonlom
+ * @since 1.0.0
+ * @constructor Constructs definition implementation class.
+ */
 class CelsiusTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.CELSIUS
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(
@@ -17,6 +51,12 @@ class CelsiusTemperatureConversion : TemperatureConversion {
   )
 }
 
+/**
+ * Interface implementation for Fahrenheit temperature unit conversion feature.
+ * @author marlonlom
+ * @since 1.0.0
+ * @constructor Constructs definition implementation class.
+ */
 class FahrenheitTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.FAHRENHEIT
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(
@@ -27,6 +67,12 @@ class FahrenheitTemperatureConversion : TemperatureConversion {
   )
 }
 
+/**
+ * Interface implementation for Kelvin temperature unit conversion feature.
+ * @author marlonlom
+ * @since 1.0.0
+ * @constructor Constructs definition implementation class.
+ */
 class KelvinTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.KELVIN
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(
@@ -37,6 +83,12 @@ class KelvinTemperatureConversion : TemperatureConversion {
   )
 }
 
+/**
+ * Interface implementation for Rankine temperature unit conversion feature.
+ * @author marlonlom
+ * @since 1.0.0
+ * @constructor Constructs definition implementation class.
+ */
 class RankineTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.RANKINE
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(

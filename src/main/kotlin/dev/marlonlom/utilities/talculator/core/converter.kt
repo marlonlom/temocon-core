@@ -3,11 +3,12 @@ package dev.marlonlom.utilities.talculator.core
 /**
  * Data class for temperature conversion request.
  * @author marlonlom
+ * @since 1.0.0
  *
  * @constructor Constructs data class.
  *
- *  @property valueToConvert temperature numeric value to be converted.
- *  @property temperatureUnit temperature unit enum value to be used.
+ *  @property valueToConvert Temperature numeric value to be converted.
+ *  @property temperatureUnit Temperature unit enum value to be used.
  */
 data class TemperatureConvertRequest(
   val valueToConvert: Double, val temperatureUnit: TemperatureUnit
@@ -16,20 +17,23 @@ data class TemperatureConvertRequest(
 /**
  * Data class for temperature conversion response.
  * @author marlonlom
+ * @since 1.0.0
  *
  * @constructor Constructs data class.
  *
- *  @property celsiusValue celsius response value.
- *  @property fahrenheitValue fahrenheit response value.
- *  @property kelvinValue kelvin response value.
- *  @property rankineValue rankine response value.
+ *  @property celsiusValue Celsius response value.
+ *  @property fahrenheitValue Fahrenheit response value.
+ *  @property kelvinValue Kelvin response value.
+ *  @property rankineValue Rankine response value.
  */
 data class TemperatureConvertResponse(
   val celsiusValue: Double, val fahrenheitValue: Double, val kelvinValue: Double, val rankineValue: Double
 ) {
 
   /**
-   * Returns if temperature is boiling point of water.
+   * Returns true/false if temperature is boiling point of water.
+   * @author marlonlom
+   * @since 1.0.0
    * @return true/false.
    */
   fun isBoilingPointOfWater(): Boolean =
@@ -37,7 +41,9 @@ data class TemperatureConvertResponse(
       .and(rankineValue.equals(671.67))
 
   /**
-   * Returns if temperature is freezing point of water.
+   * Returns true/false if temperature is freezing point of water.
+   * @author marlonlom
+   * @since 1.0.0
    * @return true/false.
    */
   fun isFreezingPointOfWater(): Boolean =
@@ -45,7 +51,9 @@ data class TemperatureConvertResponse(
       .and(rankineValue.equals(491.67))
 
   /**
-   * Returns if temperature is absolute zero.
+   * Returns true/false if temperature is absolute zero.
+   * @author marlonlom
+   * @since 1.0.0
    * @return true/false.
    */
   fun isAbsoluteZero(): Boolean =
@@ -53,7 +61,9 @@ data class TemperatureConvertResponse(
       .and(rankineValue.equals(0.0))
 
   /**
-   * Returns if temperature is room temperature.
+   * Returns true/false if temperature is room temperature.
+   * @author marlonlom
+   * @since 1.0.0
    * @return true/false.
    */
   fun isRoomTemperature(): Boolean =
@@ -61,7 +71,9 @@ data class TemperatureConvertResponse(
       .and(rankineValue.equals(529.47))
 
   /**
-   * Returns if temperature is average body.
+   * Returns true/false if temperature is average body.
+   * @author marlonlom
+   * @since 1.0.0
    * @return true/false.
    */
   fun isAverageBodyTemperature(): Boolean =
@@ -72,14 +84,17 @@ data class TemperatureConvertResponse(
 /**
  * Main class for temperature converter utility.
  * @author marlonlom
+ * @since 1.0.0
  *
  * @constructor Constructs utility class.
  */
 class TemperatureConverter {
   /**
    * Performs temperature conversion calculation using the request.
-   * @param request conversion request.
-   * @return conversion response, that contains selected units.
+   * @author marlonlom
+   * @since 1.0.0
+   * @param request the Conversion request.
+   * @return A conversion response, that contains selected units.
    */
   fun calculate(
     request: TemperatureConvertRequest
