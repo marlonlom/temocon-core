@@ -14,5 +14,7 @@ data class TemperatureConvertResponse(
 
 class TemperatureConverter {
   fun calculate(request: TemperatureConvertRequest): TemperatureConvertResponse =
-    request.temperatureUnit.getConverter().calculate(request.valueToConvert)
+    request.let {
+      it.temperatureUnit.getConverter().calculate(it.valueToConvert)
+    }
 }
