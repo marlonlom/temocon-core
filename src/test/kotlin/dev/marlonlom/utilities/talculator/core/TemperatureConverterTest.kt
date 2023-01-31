@@ -68,4 +68,15 @@ internal class TemperatureConverterTest {
     assertEquals(0.0, response.rankineValue)
     assertTrue(response.isAbsoluteZero())
   }
+
+  @Test
+  fun shouldCalculateRoomTemperature() {
+    val request = TemperatureConvertRequest(529.47, TemperatureUnit.RANKINE)
+    val response = converter.calculate(request)
+    assertEquals(21.00, response.celsiusValue)
+    assertEquals(69.8, response.fahrenheitValue)
+    assertEquals(294.15, response.kelvinValue)
+    assertEquals(request.valueToConvert, response.rankineValue)
+    assertTrue(response.isRoomTemperature())
+  }
 }

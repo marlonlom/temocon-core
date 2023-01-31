@@ -21,6 +21,11 @@ data class TemperatureConvertResponse(
     .and(fahrenheitValue.equals(-459.67))
     .and(kelvinValue.equals(0.0))
     .and(rankineValue.equals(0.0))
+
+  fun isRoomTemperature(): Boolean = celsiusValue.equals(21.00)
+    .and(fahrenheitValue.equals(69.8))
+    .and(kelvinValue.equals(294.15))
+    .and(rankineValue.equals(529.47))
 }
 
 class TemperatureConverter {
