@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
   kotlin("jvm") version "1.7.10"
   id("org.jetbrains.dokka") version "1.7.10"
+  id("com.diffplug.spotless") version "6.7.2"
 }
 
 group = "dev.marlonlom.utilities"
@@ -23,6 +24,7 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
   kotlinOptions.jvmTarget = "1.8"
+  dependsOn("spotlessApply")
 }
 
 val compileTestKotlin: KotlinCompile by tasks
@@ -60,3 +62,40 @@ tasks {
     add("archives", javadocJar)
   }
 }
+
+/* spotless */
+configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+  kotlin {
+    ktlint().editorConfigOverride(
+      mapOf(
+        "indent_size" to 2,
+        "ij_continuation_indent_size" to 2,
+        "trim_trailing_whitespace" to true,
+        "insert_final_newline" to true,
+        "end_of_line" to "lf",
+        "max_line_length" to 120
+      )
+    )
+    trimTrailingWhitespace()
+    indentWithSpaces(2)
+    endWithNewline()
+    licenseHeaderFile(File("${project.rootDir}/spotless/copyright.kt"))
+  }
+  kotlinGradle {
+    target("*.gradle.kts")
+    ktlint().editorConfigOverride(
+      mapOf(
+        "indent_size" to 2,
+        "ij_continuation_indent_size" to 2,
+        "trim_trailing_whitespace" to true,
+        "insert_final_newline" to true,
+        "end_of_line" to "lf",
+        "max_line_length" to 120
+      )
+    )
+    trimTrailingWhitespace()
+    indentWithSpaces(2)
+    endWithNewline()
+  }
+}
+/* spotless - end */
