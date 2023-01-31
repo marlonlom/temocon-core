@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   kotlin("jvm") version "1.7.10"
+  id("org.jetbrains.dokka") version "1.7.10"
 }
 
 group = "dev.marlonlom.utilities"
@@ -23,3 +24,23 @@ tasks.test {
 tasks.withType<KotlinCompile> {
   kotlinOptions.jvmTarget = "1.8"
 }
+
+tasks {
+  val sourcesJar by creating(Jar::class) {
+    dependsOn(JavaPlugin.CLASSES_TASK_NAME)
+    from(sourceSets.main.get().allSource)
+    archiveClassifier.set("sources")
+  }
+
+  val javadocJar by creating(Jar::class) {
+    val javadoc by tasks
+    from(javadoc)
+    archiveClassifier.set("javadoc")
+  }
+
+  artifacts {
+    add("archives", sourcesJar)
+    add("archives", javadocJar)
+  }
+}
+
