@@ -25,6 +25,29 @@ tasks.withType<KotlinCompile> {
   kotlinOptions.jvmTarget = "1.8"
 }
 
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+  jvmTarget = "1.8"
+}
+
+/* dokka */
+val dokkaOutputDir = "$buildDir/dokka"
+
+tasks.dokkaHtml.configure {
+  outputDirectory.set(buildDir.resolve("dokka"))
+}
+
+val deleteDokkaOutputDir by tasks.register<Delete>("deleteDokkaOutputDirectory") {
+  delete(dokkaOutputDir)
+}
+/* dokka - end */
+
+val javadocJar = tasks.register<Jar>("javadocJar") {
+  dependsOn(deleteDokkaOutputDir, tasks.dokkaHtml)
+  archiveClassifier.set("javadoc")
+  from(dokkaOutputDir)
+}
+
 tasks {
   val sourcesJar by creating(Jar::class) {
     dependsOn(JavaPlugin.CLASSES_TASK_NAME)
@@ -32,15 +55,8 @@ tasks {
     archiveClassifier.set("sources")
   }
 
-  val javadocJar by creating(Jar::class) {
-    val javadoc by tasks
-    from(javadoc)
-    archiveClassifier.set("javadoc")
-  }
-
   artifacts {
     add("archives", sourcesJar)
     add("archives", javadocJar)
   }
 }
-
