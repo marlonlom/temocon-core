@@ -81,7 +81,7 @@ internal class TemperatureConverterTest {
   }
 
   @Test
-  fun shouldCalculateAverageBodyTemperature() {
+  fun shouldCalculateAverageBody() {
     val request = TemperatureConvertRequest(310.15, TemperatureUnit.KELVIN)
     val response = converter.calculate(request)
     assertEquals(37.00, response.celsiusValue)
@@ -89,5 +89,16 @@ internal class TemperatureConverterTest {
     assertEquals(request.valueToConvert, response.kelvinValue)
     assertEquals(558.27, response.rankineValue)
     assertTrue(response.isAverageBodyTemperature())
+  }
+
+  @Test
+  fun shouldCalculateFreezingPointOfWater() {
+    val request = TemperatureConvertRequest(491.67, TemperatureUnit.RANKINE)
+    val response = converter.calculate(request)
+    assertEquals(0.0, response.celsiusValue)
+    assertEquals(32.00, response.fahrenheitValue)
+    assertEquals(273.15, response.kelvinValue)
+    assertEquals(request.valueToConvert, response.rankineValue)
+    assertTrue(response.isFreezingPointOfWater())
   }
 }
