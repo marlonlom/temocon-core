@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d04246e-982d-4c99-8a1b-1659ea803c48" name="Changes" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/dev/marlonlom/utilities/talculator/core/converter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/dev/marlonlom/utilities/talculator/core/converter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +108,52 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TemperatureConverterTest.shouldCalculateBoilingPointOfWater" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dev.marlonlom.utilities.talculator.core.TemperatureConverterTest.shouldCalculateBoilingPointOfWater&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TemperatureConverterTest.shouldCalculateFreezingPointOfWater" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dev.marlonlom.utilities.talculator.core.TemperatureConverterTest.shouldCalculateFreezingPointOfWater&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests in 'dev.marlonlom.utilities.talculator.core'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -134,7 +180,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'dev.marlonlom.utilities.talculator.core'" />
+        <item itemvalue="Gradle.TemperatureConverterTest.shouldCalculateFreezingPointOfWater" />
         <item itemvalue="Gradle.TemperatureConverterTest" />
+        <item itemvalue="Gradle.TemperatureConverterTest.shouldCalculateBoilingPointOfWater" />
         <item itemvalue="Gradle.CelsiusTemperatureConversionTest" />
       </list>
     </recent_temporary>
@@ -180,6 +228,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/talculator_core$TemperatureConverterTest.ic" NAME="TemperatureConverterTest Coverage Results" MODIFIED="1675142571753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/talculator_core$Tests_in__dev_marlonlom_utilities_talculator_core_.ic" NAME="Tests in 'dev.marlonlom.utilities.talculator.core' Coverage Results" MODIFIED="1675144321724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/talculator_core$Tests_in__dev_marlonlom_utilities_talculator_core_.ic" NAME="Tests in 'dev.marlonlom.utilities.talculator.core' Coverage Results" MODIFIED="1675146610214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
