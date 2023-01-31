@@ -2,7 +2,7 @@
 Utility library for handling temperature conversion between Celsius, Fahrenheit, Kelvin, Rankine units, and providing the results in all of these units for general usage.
 
 
-## Using in your projects
+## Adding the library in your projects
 
 ### Maven
 
@@ -55,7 +55,7 @@ repositories {
 ```
 
 
-## Quick Start
+## How to use the library
 The following is a step-by-step for executing a temperature conversion calculation using a provided numeric value and temperature unit:
 
 1. Construct the temperature conversion request, it must have the value (as double) to convert and the prefered unit (Celsius, Fahrenheit, Kelvin, Rankine).
