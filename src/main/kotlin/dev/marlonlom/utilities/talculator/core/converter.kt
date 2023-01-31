@@ -26,6 +26,11 @@ data class TemperatureConvertResponse(
     .and(fahrenheitValue.equals(69.8))
     .and(kelvinValue.equals(294.15))
     .and(rankineValue.equals(529.47))
+
+  fun isAverageBodyTemperature(): Boolean = celsiusValue.equals(37.00)
+    .and(fahrenheitValue.equals(98.6))
+    .and(kelvinValue.equals(310.15))
+    .and(rankineValue.equals(558.27))
 }
 
 class TemperatureConverter {

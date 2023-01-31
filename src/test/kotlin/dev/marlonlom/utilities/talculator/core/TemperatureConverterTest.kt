@@ -79,4 +79,15 @@ internal class TemperatureConverterTest {
     assertEquals(request.valueToConvert, response.rankineValue)
     assertTrue(response.isRoomTemperature())
   }
+
+  @Test
+  fun shouldCalculateAverageBodyTemperature() {
+    val request = TemperatureConvertRequest(310.15, TemperatureUnit.KELVIN)
+    val response = converter.calculate(request)
+    assertEquals(37.00, response.celsiusValue)
+    assertEquals(98.6, response.fahrenheitValue)
+    assertEquals(request.valueToConvert, response.kelvinValue)
+    assertEquals(558.27, response.rankineValue)
+    assertTrue(response.isAverageBodyTemperature())
+  }
 }
