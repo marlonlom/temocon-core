@@ -1,6 +1,7 @@
 # talculator-core
 Utility library for handling temperature conversion between Celsius, Fahrenheit, Kelvin, Rankine units, and providing the results in all of these units for general usage.
 
+
 ## Using in your projects
 
 ### Maven
@@ -53,8 +54,32 @@ repositories {
 }
 ```
 
+
 ## Quick Start
-TBD
+The following is a step-by-step for executing a temperature conversion calculation using a provided numeric value and temperature unit:
+
+1. Construct the temperature conversion request, it must have the value (as double) to convert and the prefered unit (Celsius, Fahrenheit, Kelvin, Rankine).
+```kotlin
+val request = TemperatureConvertRequest(21.00, TemperatureUnit.CELSIUS)
+```
+
+2. Construct the temperature converter instance.
+```kotlin
+val converter = TemperatureConverter()
+```
+
+3. Use the converter instance to perform calculation using the provided request.
+```kotlin
+val response = converter.calculate(request)
+```
+
+4. Use the response and get the temperature values for selected units.
+```kotlin
+println("response=$response") 
+/* 
+  prints: response=TemperatureConvertResponse(celsiusValue=21.0, fahrenheitValue=69.8, kelvinValue=294.15, rankineValue=529.47) 
+*/
+```
 
 
 ## License
