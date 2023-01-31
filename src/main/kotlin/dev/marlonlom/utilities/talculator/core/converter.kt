@@ -1,3 +1,11 @@
+/*
+ * Copyright 2023 Marlonlom
+ *
+ * Use of this source code is governed by an MIT-style
+ * license that can be found in the LICENSE file or at
+ * https://opensource.org/licenses/MIT.
+ *
+*/
 package dev.marlonlom.utilities.talculator.core
 
 /**
@@ -8,10 +16,11 @@ package dev.marlonlom.utilities.talculator.core
  * @constructor Constructs data class.
  *
  *  @property valueToConvert Temperature numeric value to be converted.
- *  @property temperatureUnit Temperature unit enum value to be used.
+ *  @property temperatureUnit T emperature unit enum value to be used.
  */
 data class TemperatureConvertRequest(
-  val valueToConvert: Double, val temperatureUnit: TemperatureUnit
+  val valueToConvert: Double,
+  val temperatureUnit: TemperatureUnit
 )
 
 /**
@@ -27,7 +36,10 @@ data class TemperatureConvertRequest(
  *  @property rankineValue Rankine response value.
  */
 data class TemperatureConvertResponse(
-  val celsiusValue: Double, val fahrenheitValue: Double, val kelvinValue: Double, val rankineValue: Double
+  val celsiusValue: Double,
+  val fahrenheitValue: Double,
+  val kelvinValue: Double,
+  val rankineValue: Double
 ) {
 
   /**
