@@ -85,7 +85,7 @@ class KelvinTemperatureConversion : TemperatureConversion {
   override val from = TemperatureUnit.KELVIN
   override fun calculate(valueToConvert: Double): TemperatureConvertResponse = TemperatureConvertResponse(
     celsiusValue = (valueToConvert - 273.15).roundToTwoDecimals(),
-    fahrenheitValue = ((9 * valueToConvert / 5) - 459.67).roundToTwoDecimals(),
+    fahrenheitValue = (9 * valueToConvert / 5 - 459.67).roundToTwoDecimals(),
     kelvinValue = valueToConvert.roundToTwoDecimals(),
     rankineValue = (9 * valueToConvert / 5).roundToTwoDecimals()
   )
