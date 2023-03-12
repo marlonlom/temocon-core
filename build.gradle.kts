@@ -51,7 +51,8 @@ tasks.dokkaHtml.configure {
 
 val deleteDokkaOutputDir by tasks.register<Delete>("deleteDokkaOutputDirectory") {
   delete(dokkaOutputDir)
-} /* dokka - end */
+}
+/* dokka - end */
 
 val javadocJar = tasks.register<Jar>("javadocJar") {
   dependsOn(deleteDokkaOutputDir, tasks.dokkaHtml)
