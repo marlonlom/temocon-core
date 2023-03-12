@@ -13,6 +13,7 @@ plugins {
   kotlin("jvm") version "1.7.10"
   id("org.jetbrains.dokka") version "1.7.10"
   id("com.diffplug.spotless") version "6.7.2"
+  id("maven-publish")
 }
 
 group = "dev.marlonlom.utilities"
@@ -50,8 +51,7 @@ tasks.dokkaHtml.configure {
 
 val deleteDokkaOutputDir by tasks.register<Delete>("deleteDokkaOutputDirectory") {
   delete(dokkaOutputDir)
-}
-/* dokka - end */
+} /* dokka - end */
 
 val javadocJar = tasks.register<Jar>("javadocJar") {
   dependsOn(deleteDokkaOutputDir, tasks.dokkaHtml)
@@ -108,3 +108,49 @@ configure<com.diffplug.gradle.spotless.SpotlessExtension> {
   }
 }
 /* spotless - end */
+
+/* publishing */
+java {
+  withJavadocJar()
+  withSourcesJar()
+}
+
+publishing {
+  publications {
+    create<MavenPublication>("mavenJava") {
+      groupId = project.group.toString()
+      artifactId = project.name
+      version = project.version.toString()
+
+      from(components["java"])
+      pom {
+        name.set(project.name)
+        groupId = project.group.toString()
+        artifactId = project.name
+        version = project.version.toString()
+        packaging = "jar"
+        url.set("https://github.com/marlonlom/talculator-core")
+        licenses {
+          license {
+            name.set("The MIT License")
+            url.set("https://mit-license.org/")
+          }
+        }
+        developers {
+          developer {
+            id.set("marlonlom")
+            name.set("Marlon José López Meza")
+            email.set("malm.gm@gmail.com")
+          }
+        }
+        scm {
+          connection.set("scm:git:git@github.com:marlonlom/talculator-core.git")
+          developerConnection.set("scm:git:ssh://github.com:marlonlom/talculator-core.git")
+          url.set("https://github.com/marlonlom/talculator-core")
+        }
+      }
+    }
+  }
+}
+
+/* maven publish - end */
