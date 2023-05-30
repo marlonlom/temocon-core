@@ -1,6 +1,6 @@
-# talculator-core
+# temocon-core
 
-[![CodeFactor](https://www.codefactor.io/repository/github/marlonlom/talculator-core/badge/main)](https://www.codefactor.io/repository/github/marlonlom/talculator-core/overview/main)
+[![CodeFactor](https://www.codefactor.io/repository/github/marlonlom/temocon-core/badge/main)](https://www.codefactor.io/repository/github/marlonlom/temocon-core/overview/main)
 
 Utility library for handling temperature conversion between Celsius, Fahrenheit, Kelvin, Rankine units, and providing the results in all of these units for general usage.
 
