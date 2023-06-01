@@ -130,7 +130,7 @@ publishing {
         artifactId = project.name
         version = project.version.toString()
         packaging = "jar"
-        url.set("https://github.com/marlonlom/talculator-core")
+        url.set("https://github.com/marlonlom/temocon-core")
         licenses {
           license {
             name.set("The MIT License")
@@ -145,9 +145,9 @@ publishing {
           }
         }
         scm {
-          connection.set("scm:git:git@github.com:marlonlom/talculator-core.git")
-          developerConnection.set("scm:git:ssh://github.com:marlonlom/talculator-core.git")
-          url.set("https://github.com/marlonlom/talculator-core")
+          connection.set("scm:git:git@github.com:marlonlom/temocon-core.git")
+          developerConnection.set("scm:git:ssh://github.com:marlonlom/temocon-core.git")
+          url.set("https://github.com/marlonlom/temocon-core")
         }
       }
     }
