@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  *
 */
-package dev.marlonlom.utilities.talculator.core
+package dev.marlonlom.utilities.temocon.core
 
 /**
  * Performs double value rounding to two decimals.

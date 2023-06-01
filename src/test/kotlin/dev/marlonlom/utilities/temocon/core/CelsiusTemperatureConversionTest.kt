@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  *
 */
-package dev.marlonlom.utilities.talculator.core
+package dev.marlonlom.utilities.temocon.core
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

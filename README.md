@@ -1,6 +1,6 @@
-# talculator-core
+# temocon-core
 
-[![CodeFactor](https://www.codefactor.io/repository/github/marlonlom/talculator-core/badge/main)](https://www.codefactor.io/repository/github/marlonlom/talculator-core/overview/main)
+[![CodeFactor](https://www.codefactor.io/repository/github/marlonlom/temocon-core/badge/main)](https://www.codefactor.io/repository/github/marlonlom/temocon-core/overview/main)
 
 Utility library for handling temperature conversion between Celsius, Fahrenheit, Kelvin, Rankine units, and providing the results in all of these units for general usage.
 
@@ -14,8 +14,8 @@ Add dependencies (you can also add other modules that you need):
 ```xml
 <dependency>
     <groupId>dev.marlonlom.utilities</groupId>
-    <artifactId>talculator-core</artifactId>
-    <version>${talculator_core.latestVersion}</version>
+    <artifactId>temocon-core</artifactId>
+    <version>${temocon_core.latestVersion}</version>
 </dependency>
 ```
 
@@ -33,7 +33,7 @@ Add dependencies (you can also add other modules that you need):
 
 ```kotlin
 dependencies {
-    implementation("dev.marlonlom.utilities:talculator-core:${talculator_core.latestVersion}")
+    implementation("dev.marlonlom.utilities:temocon-core:${temocon_core.latestVersion}")
 }
 ```
 
