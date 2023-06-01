@@ -7,4 +7,4 @@
  *
 */
 
-rootProject.name = "talculator-core"
+rootProject.name = "temocon-core"

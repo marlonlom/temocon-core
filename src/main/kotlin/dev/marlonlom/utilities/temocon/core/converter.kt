@@ -6,7 +6,7 @@
  * https://opensource.org/licenses/MIT.
  *
 */
-package dev.marlonlom.utilities.talculator.core
+package dev.marlonlom.utilities.temocon.core
 
 /**
  * Data class for temperature conversion request.

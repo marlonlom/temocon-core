@@ -14,7 +14,7 @@ Add dependencies (you can also add other modules that you need):
 ```xml
 <dependency>
     <groupId>dev.marlonlom.utilities</groupId>
-    <artifactId>talculator-core</artifactId>
+    <artifactId>temocon-core</artifactId>
     <version>${talculator_core.latestVersion}</version>
 </dependency>
 ```
@@ -33,7 +33,7 @@ Add dependencies (you can also add other modules that you need):
 
 ```kotlin
 dependencies {
-    implementation("dev.marlonlom.utilities:talculator-core:${talculator_core.latestVersion}")
+    implementation("dev.marlonlom.utilities:temocon-core:${talculator_core.latestVersion}")
 }
 ```
 
