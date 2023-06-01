@@ -2,6 +2,9 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/marlonlom/temocon-core/badge/main)](https://www.codefactor.io/repository/github/marlonlom/temocon-core/overview/main)
 [![Build](https://github.com/marlonlom/temocon-core/actions/workflows/build.yml/badge.svg)](https://github.com/marlonlom/temocon-core/actions/workflows/build.yml)
+
+<hr/>
+
 Utility library for handling temperature conversion between Celsius, Fahrenheit, Kelvin, Rankine units, and providing the results in all of these units for general usage.
 
 
