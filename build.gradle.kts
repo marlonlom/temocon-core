@@ -140,7 +140,7 @@ publishing {
         developers {
           developer {
             id.set("marlonlom")
-            name.set("Marlon José López Meza")
+            name.set("Marlon Lopez")
             email.set("malm.gm@gmail.com")
           }
         }
